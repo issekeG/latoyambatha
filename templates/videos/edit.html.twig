@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit ReissueRequest{% endblock %}
+
+{% block body %}
+
+
+    {{ include('videos/_form.html.twig', {'button_label': 'Update / Save'}) }}
+
+    <section class="justify-content-center" >
+        <div class="container" style="margin-top: 0">
+            <div class="row justify-content-center" style="margin-top: 0">
+                <div class="col-md-10  flex-column align-items-center justify-content-center" style="margin-top: 0">
+                    <div class="card m-0" style="margin-top: 0">
+                        <div class="row justify-content-center align-content-center mb-4 mt-0">
+
+                            <div class="form-group col-md-2">
+                                {% if form.vars.value.id matches '/^[0-9]+$/' %}
+                                    <a class="btn btn-primary w-100" href="{{ path('update_status', {'status': 'Approved', 'id':form.vars.value.id ?? '0'}) }}">Approve</a>
+                                {% endif %}
+
+                            </div>
+                            <div class="form-group col-md-2">
+                                {% if form.vars.value.id matches '/^[0-9]+$/'%}
+                                    <a class="btn btn-danger w-100" href="{{ path('update_status',{'status': 'Rejected', 'id':form.vars.value.id ?? '0'}) }}">Reject</a>
+                                {% endif %}
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <a class="btn btn-primary mb-3 mx-5" href="{{ path('app_videos_index') }}">back to dashboard</a>
+
+    {{ include('videos/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,47 @@
+
+<main>
+    <div class="container pb-0" >
+        <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center" >
+            <div class="container">
+                <div class="row justify-content-center">
+
+                    <div class="col-md-8  flex-column align-items-center justify-content-center">
+
+                        <div class="d-flex justify-content-center py-4">
+                            <a class="logo d-flex align-items-center w-auto">
+                                <span class="d-none d-lg-block">Form</span>
+                            </a>
+                        </div>
+
+                        <div class="card">
+                            <div class="px-4 row" style="margin-bottom: 0">
+                                {{ form_start(form) }}
+
+                                <label class="form-label my-4">Add Category : </label>
+
+                                <div class="col-12  mb-4">
+                                    {{ form_row(form.name) }}
+                                    <div class="invalid-feedback">Please enter the Categorie</div>
+                                </div>
+
+                                <div class="row justify-content-center align-content-center">
+
+                                    <div class="form-group col-md-3 mb-5">
+                                        <button class="btn btn-success">{{ button_label|default('Save') }}</button>
+
+                                    </div>
+
+                                </div>
+                                {{ form_end(form) }}
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+</main>
